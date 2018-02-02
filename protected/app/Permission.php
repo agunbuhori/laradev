@@ -2,9 +2,10 @@
 
 namespace App;
 
+use Zizaco\Entrust\EntrustPermission;
 use Illuminate\Database\Eloquent\Model;
 
-class Feed extends Model
+class Permission extends Model
 {
     //
 }
