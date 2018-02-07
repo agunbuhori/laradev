@@ -9,14 +9,14 @@
 	.cke_chrome{display: block;
 border: 1px solid #DDD;
 border-radius: 2px;
-background: #fff;}
+background: #fcfcfc;}
 
 	.cke_inner{display:block;-webkit-touch-callout:none;background:0;padding:0}.cke_float{border:0}.cke_float .cke_inner{padding-bottom:0}.cke_float .cke_top{border:1px solid #ddd}.cke_bottom,.cke_contents,.cke_top{display:block;overflow:hidden}
 
 .cke_editable:focus {outline: 0}
-.cke_top{padding:5px 5px 0 5px;background:#f5f5f5}
+.cke_top{padding:15px 20px 5px 20px;background:#fcfcfc}
 
-.cke_bottom {background:#f5f5f5;}
+.cke_bottom {background:#fcfcfc;}
 
 .cke_top{white-space:normal}
 
@@ -77,9 +77,8 @@ background: #f5f5f5;}
 
 .cke_colorblock{padding:3px;font-size:11px;font-family:'Microsoft Sans Serif',Tahoma,Arial,Verdana,Sans-Serif}.cke_colorblock,.cke_colorblock a{text-decoration:none;color:#000}span.cke_colorbox{width:10px;height:10px;border:1px solid #aaa;float:left}.cke_rtl span.cke_colorbox{float:right}a.cke_colorbox{border:1px solid #fff;padding:2px;float:left;width:12px;height:12px;border-radius:2px}.cke_rtl a.cke_colorbox{float:right}a:active.cke_colorbox,a:focus.cke_colorbox,a:hover.cke_colorbox{border:1px solid #ddd;background-color:#eee}a.cke_colorauto,a.cke_colormore{border:1px solid #fff;padding:2px;display:block;cursor:pointer}a:active.cke_colorauto,a:active.cke_colormore,a:focus.cke_colorauto,a:focus.cke_colormore,a:hover.cke_colorauto,a:hover.cke_colormore{border:1px solid #ddd;background-color:#eee}.cke_toolbar{float:left}.cke_rtl .cke_toolbar{float:right}
 .cke_toolgroup{float: left;
-margin: 0 6px 5px 0;
+margin: 0 6px 10px 0;
 border: 1px solid #d5d5d5;
-font-weight: 500;
 border-radius: 2px;
 background: #FFF;}
 
@@ -156,21 +155,16 @@ width: 1px;}
 
 .cke_menubutton:active,.cke_menubutton:focus,.cke_menubutton:hover{background-color:#f5f5f5}
 
-.cke_panel_frame .cke_menubutton_label{display:none}.cke_menuseparator{background-color:#d3d3d3;height:1px;filter:alpha(opacity=70);opacity:.7}.cke_menuarrow{background-image:url(images/arrow.png);background-position:0 13px;background-repeat:no-repeat;padding:0 5px}.cke_menuarrow span{display:none}.cke_rtl .cke_menuarrow{background-position:5px -13px;background-repeat:no-repeat}.cke_hc .cke_menuarrow span{vertical-align:middle;display:inline}
-
-.cke_combo{display:inline-block;float:left; font-weight: 500;}
-
-.cke_rtl .cke_combo{float:right}.cke_hc .cke_combo{margin-top:-2px}.cke_combo_label{display:none;float:left;line-height:26px;vertical-align:top;margin-right:5px}.cke_rtl .cke_combo_label{float:right;margin-left:5px;margin-right:0}
+.cke_panel_frame .cke_menubutton_label{display:none}.cke_menuseparator{background-color:#d3d3d3;height:1px;filter:alpha(opacity=70);opacity:.7}.cke_menuarrow{background-image:url(images/arrow.png);background-position:0 10px;background-repeat:no-repeat;padding:0 5px}.cke_menuarrow span{display:none}.cke_rtl .cke_menuarrow{background-position:5px -13px;background-repeat:no-repeat}.cke_hc .cke_menuarrow span{vertical-align:middle;display:inline}.cke_combo{display:inline-block;float:left}.cke_rtl .cke_combo{float:right}.cke_hc .cke_combo{margin-top:-2px}.cke_combo_label{display:none;float:left;line-height:26px;vertical-align:top;margin-right:5px}.cke_rtl .cke_combo_label{float:right;margin-left:5px;margin-right:0}
 
 .cke_combo_button{display: inline-block;
 float: left;
 cursor: pointer;
-margin: 0 6px 3px 0;
+margin: 0 6px 10px 0;
 border: 1px solid #DDD;
 border-radius: 2px;
-font-size: 12px;
 background: #FFF;
-padding: 6px 10px;}
+padding: 7px 10px;}
 
 .cke_combo_off a.cke_combo_button:focus,.cke_combo_off a.cke_combo_button:hover{outline:0}
 
@@ -195,7 +189,7 @@ vertical-align: middle;}
 
 .cke_hc .cke_combo_open{height:12px}
 
-.cke_combo_arrow{float:left;height:0;width:0;font-size:0;border-left:3px solid transparent;border-right:3px solid transparent;border-top:3px solid #333}
+.cke_combo_arrow{float:left;height:0;width:0;font-size:0;border-left:3px solid transparent;border-right:3px solid transparent;border-top:3px solid #333;margin-top:-1px;}
 
 .cke_hc .cke_combo_arrow{font-size:10px;width:auto;border:0;margin-top:3px}.cke_combo_disabled .cke_combo_inlinelabel,.cke_combo_disabled .cke_combo_open{opacity:.3}
 

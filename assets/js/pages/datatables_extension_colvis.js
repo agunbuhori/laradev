@@ -122,7 +122,7 @@ $(function() {
 
     // External table additions
     // ------------------------------
-
+    
     // Launch Uniform styling for checkboxes
     $('.ColVis_Button').addClass('btn btn-primary btn-icon').on('click mouseover', function() {
         $('.ColVis_collection input').uniform();

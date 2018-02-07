@@ -4,13 +4,13 @@
 *
 *  Specific JS code additions for layout_sidebar_sticky_custom.html page
 *
-*  Version: 1.0
-*  Latest update: Aug 1, 2015
+*  Version: 1.1
+*  Latest update: Feb 25, 2016
 *
 * ---------------------------------------------------------------------------- */
 
 $(function() {
-
+    
 
     // Mini sidebar
     // -------------------------
@@ -18,7 +18,7 @@ $(function() {
     // Setup
     function miniSidebar() {
         if ($('body').hasClass('sidebar-xs')) {
-            $('.sidebar-main.sidebar-fixed .sidebar-content').on('mouseenter', function () {
+            $('.sidebar-main .sidebar-fixed .sidebar-content').on('mouseenter', function () {
                 if ($('body').hasClass('sidebar-xs')) {
 
                     // Expand fixed navbar
@@ -33,10 +33,6 @@ $(function() {
             });
         }
     }
-
-    // Initialize
-    miniSidebar();
-
 
     // Toggle mini sidebar
     $('.sidebar-main-toggle').on('click', function (e) {
@@ -68,29 +64,77 @@ $(function() {
 	    });
 	}
 
+	// Resize
+	function resizeScroll() {
+		$('.sidebar-fixed .sidebar-content').getNiceScroll().resize();
+	}
+
 	// Remove
 	function removeScroll() {
 		$(".sidebar-fixed .sidebar-content").getNiceScroll().remove();
 		$(".sidebar-fixed .sidebar-content").removeAttr('style').removeAttr('tabindex');
 	}
 
-    // Initialize
-    initScroll();
+
+    // Resize sidebar on scroll
+    // ------------------------------
+
+	// Resize detached sidebar vertically when bottom reached
+    function resizeDetached() {
+		$(window).on('scroll', function() {
+		  if ($(window).scrollTop() > $(document).height() - $(window).height() - 40) {
+		    $('.sidebar-fixed').addClass('fixed-sidebar-space');
+		    resizeScroll();
+		  }
+		  else {
+		    $('.sidebar-fixed').removeClass('fixed-sidebar-space');
+		    resizeScroll();
+		  }
+		});
+    }
 
 
+    // Affix detached sidebar
+    // ------------------------------
 
-    // Remove scrollbar on mobile
+    // Init nicescroll when sidebar affixed
+	$('.sidebar-fixed').on('affix.bs.affix', function() {
+		initScroll();
+		resizeDetached();
+		miniSidebar();
+	});
+
+    // Init mini sidebar functionality for main sidebar
+    $('.sidebar-main .sidebar-fixed').on('affix.bs.affix', function() {
+        miniSidebar();
+    });
+
+    // When effixed top, remove scrollbar and its data
+    $('.sidebar-fixed').on('affix-top.bs.affix', function() {
+		removeScroll();
+
+        $(".sidebar-fixed .sidebar-content").removeAttr('style').removeAttr('tabindex');
+    });
+
+	// Attach BS affix component to the sidebar
+	$('.sidebar-fixed').affix({
+		offset: {
+			top: $('.sidebar-fixed').offset().top - 20 // top offset - computed line height
+		}
+	});
+
+
+    // Remove affix and scrollbar on mobile
     $(window).on('resize', function() {
         setTimeout(function() {            
             if($(window).width() <= 768) {
 
                 // Remove nicescroll on mobiles
                 removeScroll();
-            }
-            else {
 
-                // Init scrollbar
-                initScroll();
+                // Remove affix on mobile
+                $(window).off('.affix')
+                $('.sidebar-fixed').removeData('affix').removeClass('affix affix-top affix-bottom');
             }
         }, 100);
     }).resize();

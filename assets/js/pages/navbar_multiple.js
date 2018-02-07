@@ -4,8 +4,8 @@
 *
 *  Specific JS code additions for multiple navbar pages
 *
-*  Version: 1.2
-*  Latest update: Aug 10, 2016
+*  Version: 1.1
+*  Latest update: Nov 25, 2015
 *
 * ---------------------------------------------------------------------------- */
 
@@ -94,12 +94,12 @@ $(function() {
 
                         // When affixed
                         $('.navbar-affix-xs').on('affixed.bs.affix', function() {
-                            $(this).next('.page-container').css('margin-top', $(this).outerHeight())
+                            $(this).next('.page-header').css('margin-top', $(this).outerHeight())
                         });
 
                         // When on top
                         $('.navbar-affix-xs').on('affixed-top.bs.affix', function() {
-                            $(this).next('.page-container').css('margin-top', '')
+                            $(this).next('.page-header').css('margin-top', '')
                         });
                     }
                 }, 100);
@@ -115,13 +115,11 @@ $(function() {
         // Main bottom
         if (vals == 'main_bottom') {
             $('#navbar-main').addClass('navbar-fixed-bottom');
-            $('body').addClass('navbar-bottom');
-            $('.footer').hide();
+            $('body').addClass('navbar-bottom')
         }
         else {
             $('#navbar-main').removeClass('navbar-fixed-bottom');
-            $('body').removeClass('navbar-bottom');
-            $('.footer').show();
+            $('body').removeClass('navbar-bottom')
         }
     });
 
@@ -147,26 +145,25 @@ $(function() {
 
         // Multiple top
         if (vals == 'multiple_top') {
-            $('body').addClass('navbar-top-md-xs');
+            $('body').addClass('navbar-top-md-md');
             $('#navbar-main, #navbar-second').wrapAll('<div class="navbar-fixed-top" />');
             
         }
         else {
-            $('body').removeClass('navbar-top-md-xs');
+            $('body').removeClass('navbar-top-md-md');
             $('body').children('.navbar-fixed-top').children().unwrap();
         }
 
 
         // Multiple bottom
         if (vals == 'multiple_bottom') {
-            $('body').addClass('navbar-bottom-md-xs');
+            $('body').addClass('navbar-bottom-md-md');
             $('#navbar-main, #navbar-second').wrapAll('<div class="navbar-fixed-bottom" />');
-            $('.footer').hide();
+            
         }
         else {
-            $('body').removeClass('navbar-bottom-md-xs');
+            $('body').removeClass('navbar-bottom-md-md');
             $('body').children('.navbar-fixed-bottom').children().unwrap();
-            $('.footer').show();
         }
     });
 

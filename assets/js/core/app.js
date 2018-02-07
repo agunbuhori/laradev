@@ -4,8 +4,8 @@
 *
 *  Core JS file with default functionality configuration
 *
-*  Version: 1.3
-*  Latest update: Aug 10, 2016
+*  Version: 1.2
+*  Latest update: Dec 11, 2015
 *
 * ---------------------------------------------------------------------------- */
 
@@ -107,6 +107,20 @@ $(function() {
     // Show tabs inside dropdowns
     $('.dropdown-content a[data-toggle="tab"]').on('click', function (e) {
         $(this).tab('show');
+    });
+
+
+
+    // Drill down menu
+    // ------------------------------
+
+    // If menu has child levels, add selector class
+    $('.menu-list').find('li').has('ul').parents('.menu-list').addClass('has-children');
+
+    // Attach drill down menu to menu list with child levels
+    $('.has-children').dcDrilldown({
+        defaultText: 'Back to parent',
+        saveState: true
     });
 
 
@@ -404,13 +418,6 @@ $(function() {
     });
 
 
-    // Hide detached sidebar
-    $(document).on('click', '.sidebar-detached-hide', function (e) {
-        e.preventDefault();
-        $('body').toggleClass('sidebar-detached-hidden');
-    });
-
-
     // Hide all sidebars
     $(document).on('click', '.sidebar-all-hide', function (e) {
         e.preventDefault();
@@ -531,28 +538,21 @@ $(function() {
     // Toggle main sidebar
     $('.sidebar-mobile-main-toggle').on('click', function (e) {
         e.preventDefault();
-        $('body').toggleClass('sidebar-mobile-main').removeClass('sidebar-mobile-secondary sidebar-mobile-opposite sidebar-mobile-detached');
+        $('body').toggleClass('sidebar-mobile-main').removeClass('sidebar-mobile-secondary sidebar-mobile-opposite');
     });
 
 
     // Toggle secondary sidebar
     $('.sidebar-mobile-secondary-toggle').on('click', function (e) {
         e.preventDefault();
-        $('body').toggleClass('sidebar-mobile-secondary').removeClass('sidebar-mobile-main sidebar-mobile-opposite sidebar-mobile-detached');
+        $('body').toggleClass('sidebar-mobile-secondary').removeClass('sidebar-mobile-main sidebar-mobile-opposite');
     });
 
 
     // Toggle opposite sidebar
     $('.sidebar-mobile-opposite-toggle').on('click', function (e) {
         e.preventDefault();
-        $('body').toggleClass('sidebar-mobile-opposite').removeClass('sidebar-mobile-main sidebar-mobile-secondary sidebar-mobile-detached');
-    });
-
-
-    // Toggle detached sidebar
-    $('.sidebar-mobile-detached-toggle').on('click', function (e) {
-        e.preventDefault();
-        $('body').toggleClass('sidebar-mobile-detached').removeClass('sidebar-mobile-main sidebar-mobile-secondary sidebar-mobile-opposite');
+        $('body').toggleClass('sidebar-mobile-opposite').removeClass('sidebar-mobile-main sidebar-mobile-secondary');
     });
 
 
@@ -570,10 +570,11 @@ $(function() {
                 $('body').addClass('sidebar-xs-indicator');
 
                 // Place right sidebar before content
-                $('.sidebar-opposite').insertBefore('.content-wrapper');
+                $('.sidebar-opposite').prependTo('.page-content');
 
-                // Place detached sidebar before content
-                $('.sidebar-detached').insertBefore('.content-wrapper');
+                // Remove nicescroll on mobiles
+                $('.menu-list').getNiceScroll().remove();
+                $(".menu-list").removeAttr('style').removeAttr('tabindex');
 
                 // Add mouse events for dropdown submenus
                 $('.dropdown-submenu').on('mouseenter', function() {
@@ -591,17 +592,18 @@ $(function() {
                 $('.sidebar-opposite').insertAfter('.content-wrapper');
 
                 // Remove all mobile sidebar classes
-                $('body').removeClass('sidebar-mobile-main sidebar-mobile-secondary sidebar-mobile-detached sidebar-mobile-opposite');
+                $('body').removeClass('sidebar-mobile-main sidebar-mobile-secondary sidebar-mobile-opposite');
 
-                // Revert left detached position
-                if($('body').hasClass('has-detached-left')) {
-                    $('.sidebar-detached').insertBefore('.container-detached');
-                }
-
-                // Revert right detached position
-                else if($('body').hasClass('has-detached-right')) {
-                    $('.sidebar-detached').insertAfter('.container-detached');
-                }
+                // Initialize nicescroll on tablets+
+                $(".menu-list").niceScroll({
+                    mousescrollstep: 100,
+                    cursorcolor: '#ccc',
+                    cursorborder: '',
+                    cursorwidth: 3,
+                    hidecursordelay: 200,
+                    autohidemode: 'scroll',
+                    railpadding: { right: 0.5 }
+                });
 
                 // Remove visibility of heading elements on desktop
                 $('.page-header-content, .panel-heading, .panel-footer').removeClass('has-visible-elements');

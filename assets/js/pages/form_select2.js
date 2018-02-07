@@ -181,6 +181,7 @@ $(function() {
     // Initialize with options
     $(".select-icons").select2({
         templateResult: iconFormat,
+        minimumResultsForSearch: Infinity,
         templateSelection: iconFormat,
         escapeMarkup: function(m) { return m; }
     });

@@ -1,15 +1,19 @@
 /* ------------------------------------------------------------------------------
 *
-*  # Page layout with hideable navbar
+*  # Page layout with hideable main navbar
 *
-*  Specific JS code additions for layout_navbar_hideable.html page
+*  Specific JS code additions for layout_navbar_main_hideable.html page
 *
 *  Version: 1.0
-*  Latest update: Aug 1, 2015
+*  Latest update: Feb 25, 2016
 *
 * ---------------------------------------------------------------------------- */
 
 $(function() {
+
+
+    // Init headroom
+    // ------------------------------
 
     // Hide navbar with Headroom.js library
     $(".navbar-fixed-top").headroom({
@@ -17,7 +21,7 @@ $(function() {
             pinned: "headroom-top-pinned",
             unpinned: "headroom-top-unpinned"
         },
-        offset: $('.navbar').outerHeight(),
+        offset: $('.page-container').offset().top - $('.navbar-fixed-top').outerHeight(),
 
         // callback when unpinned, `this` is headroom object
         onUnpin: function() {

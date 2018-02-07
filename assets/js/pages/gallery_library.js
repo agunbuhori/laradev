@@ -84,7 +84,7 @@ $(function() {
 
     // External table additions
     // ------------------------------
-
+    
     // Lightbox
     $('[data-popup="lightbox"]').fancybox({
         padding: 3

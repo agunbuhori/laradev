@@ -4,17 +4,28 @@
     },
 
     "nav": {
-        "category": {
-        	"main": "Main",
-        	"form": "Forms",
-        	"appearance": "Appearance",
-        	"layout": "Layout",
-            "options": "Layout options",
-        	"datavis": "Data visualization",
-        	"extensions": "Extensions",
-        	"tables": "Tables",
-        	"pages": "Page kits"
-    	},
+
+        "top": {
+            "dash": "Dashboard",
+            "components": {
+                "main": "Components",
+                "forms": "Forms",
+                "show": "Appearance",
+                "ext": "Extensions",
+                "tables": "Tables"
+            },
+            "features": {
+                "main": "Features",
+                "content": "Main content",
+                "layout": "Layout",
+                "vis": "Data visuzlitaion",
+                "extra": "Extras"
+            },
+            "kits": "Page kits",
+            "starters": "Starter kit",
+            "changelog": "Changelog",
+            "linkback": "Back to parent"
+        },
 
 
         "dash": {
@@ -23,21 +34,26 @@
 
         "page_layouts": {
             "main": "Page layouts",
-            "fixed_navbar": "Fixed navbar",
-            "fixed_all": "Fixed navbar &amp; sidebar",
-            "fixed_native": "Fixed sidebar native scroll",
-            "hideable": "Hideable navbar",
-            "fixed_hideable": "Hideable &amp; fixed sidebar",
+            "fixed_main": "Fixed main navbar",
+            "fixed_secondary": "Fixed secondary navbar",
+            "hideable_main": "Hideable main navbar",
+            "hideable_secondary": "Hideable secondary navbar",
             "fixed_footer": "Fixed footer",
-            "boxed_default": "Boxed with default sidebar",
-            "boxed_mini": "Boxed with mini sidebar",
-            "boxed_full": "Boxed full width"
+            "sticky_custom": "Sticky sidebar (custom scroll)",
+            "sticky_native": "Sticky sidebar (native scroll)"
+        },
+
+        "boxed": {
+            "main": "Fixed width",
+            "full": "Boxed full width",            
+            "default": "Boxed with default sidebar",
+            "mini": "Boxed with mini sidebar"
         },
 
         "layouts": {
             "main": "Layouts",
             "current": "<span class='label bg-warning-400'>Current</span>",
-            "next": "<span class='label label-default'>Coming soon</span>",
+            "next": "<span class='label bg-slate-300'>Coming soon</span>",
             "layout1": "Layout 1",
             "layout2": "Layout 2",
             "layout3": "Layout 3",
@@ -66,43 +82,42 @@
             "slate": "Slate palette"
         },
 
-        "starter": {
-            "main": "Starter kit",
-            "hnav": "Horizontal navigation",
-            "1col": "1 column",
-            "2col": "2 columns",
-            "3col": {
-                "main": "3 columns",
-                "dual": "Dual sidebars",
-                "double": "Double sidebars"
-            },
-            "4col": "4 columns",
-            "detached": {
-                "main": "Detached layout",
-                "left": "Left sidebar",
-                "right": "Right sidebar",
-                "sticky": "Sticky sidebar"
-            },
-            "boxed": "Boxed layout",
-            "fixed_main": "Fixed main navbar",
-            "fixed_secondary": "Fixed secondary navbar",
-            "fixed_both": "Both navbars fixed",
-            "fixed_layout": "Fixed layout"            
-        },
-
-        "changelog": {
-            "main": "Changelog <span class='label bg-blue-400'>1.4</span>"
-        },
-
         "rtl": {
             "main": "RTL version"
+        },
+
+        "starter": {
+            "header_1": "Basic layouts",
+            "header_1_1": "Options",
+            "header_1_2": "Sidebar position",
+            "header_1_3": "Fixed navbars",
+            "header_2": "Optional layouts",
+            "cols": {
+                "main": "Columns",
+                "1col": "One column",
+                "2col": "Two columns",
+                "3col": {
+                    "main": "Three columns",
+                    "dual": "Dual sidebars",
+                    "double": "Double sidebars"
+                },
+                "4col": "Four columns"
+            },
+            "navs": {
+                "main": "Navbars",
+                "primary": "Fixed main navbar",
+                "secondary": "Fixed secondary navbar",
+                "both": "Both navbars fixed"
+            },
+            "boxed": "Boxed layout",
+            "sticky": "Sticky sidebar"            
         },
 
 
         "form": {
             "main": "Form components",
             "basic": "Basic inputs",
-            "checkers": "Checkboxes &amp; radios",
+            "checkers": "Checkboxes & radios",
             "groups": "Input groups",
             "extended": "Extended controls",
             "labels": "Floating labels",
@@ -151,7 +166,7 @@
 
         "picker": {
             "main": "Pickers",
-            "datetime": "Date &amp; time pickers",
+            "datetime": "Date & time pickers",
             "color": "Color pickers",
             "location": "Location pickers"
         },
@@ -185,12 +200,16 @@
             "affix": "Affix and Scrollspy"
         },
 
-        "appearance": {
-            "main": "Content appearance",
-            "panels": "Content panels",
-            "heading": "Panel heading elements",
-            "footer": "Panel footer elements",
-            "draggable": "Draggable panels",
+        "panels": {
+            "main": "Content panels",
+            "base": "Panels",
+            "heading": "Heading elements",
+            "footer": "Footer elements",
+            "draggable": "Draggable panels"
+        },
+
+        "content": {
+            "main": "Content styling",
             "text": "Text styling",
             "typo": "Typography",
             "helpers": "Helper classes",
@@ -198,26 +217,23 @@
             "grid": "Grid system"
         },
 
+        "animation": {
+            "main": "CSS3 animations"
+        },
+
         "extra": {
             "main": "Extra components",
             "noui": "NoUI sliders",
             "ion": "Ion range sliders",
-            "session": "Session timeout",
-            "idle": "Idle timeout",
             "tree": "Dynamic tree views",
             "context": "Context menu",
             "fab": "Floating action buttons"
         },
 
-        "animations": {
-            "main": "Animations",
-            "css3": "CSS3 animations",
-            "velocity": {
-                "main": "Velocity animations",
-                "basic": "Basic usage",
-                "ui": "UI pack effects",
-                "advanced": "Advanced examples"
-            }
+        "tools": {
+            "main": "Tools",
+            "session": "Session timeout",
+            "idle": "Idle timeout"
         },
 
         "icons": {
@@ -253,16 +269,9 @@
                 "mfix": "Fix mini width",
                 "ovisible": "Opposite sidebar visible"
             },
-            "detached": {
-                "main": "Detached sidebar",
-                "left": "Left position",
-                "right": "Right position",
-                "custom": "Sticky (custom scroll)",
-                "native": "Sticky (native scroll)",
-                "separate": "Separate categories"
-            },
+            "categories": "Sidebar categories",
             "hidden": "Hidden sidebar",
-            "light": "Light sidebar",
+            "dark": "Dark sidebar",
             "components": "Sidebar components"
         },
 
@@ -293,8 +302,8 @@
             "multiple": {
                 "main": "Multiple navbars",
                 "nn": "Navbar + navbar",
-                "nh": "Navbar + header",
                 "hn": "Header + navbar",
+                "nc": "Navbar + content",
                 "tb": "Top + bottom"
             },
             "colors": "Color options",
@@ -305,14 +314,14 @@
 
         "levels": {
             "main": "Menu levels",
-            "ie": "<i class='icon-IE'></i> Second level",
-            "firefox": "<i class='icon-firefox'></i> Second level with child",
-            "chrome": "<i class='icon-chrome'></i> Second level",
-            "android": "<i class='icon-android'></i> Third level",
-            "apple": "<i class='icon-apple2'></i> Third level with child",
-            "win": "<i class='icon-windows'></i> Third level",
-            "html": "<i class='icon-html5'></i> Fourth level",
-            "css": "<i class='icon-css3'></i> Fourth level"
+            "ie": "Second level",
+            "firefox": "Second level with child",
+            "chrome": "Second level",
+            "android": "Third level",
+            "apple": "Third level with child",
+            "win": "Third level",
+            "html": "Fourth level",
+            "css": "Fourth level"
         },
 
 
@@ -386,7 +395,7 @@
             "line": "Line charts",
             "bar": "Bar charts",
             "pie": "Pie charts",
-            "bubble": "Bubble &amp; scatter charts",
+            "bubble": "Bubble & scatter charts",
             "other": "Other charts"
         },
 
@@ -403,6 +412,13 @@
             "vmaps": "Vector maps"
         },
 
+
+        "velocity": {
+            "main": "Velocity animations",
+            "basic": "Basic usage",
+            "ui": "UI pack effects",
+            "advanced": "Advanced examples"
+        },
 
         "ext": {
             "main": "Extensions",
@@ -507,6 +523,8 @@
 
         "tasks": {
             "main": "Task manager",
+            "header_apps": "Apps",
+            "header_1": "Options",
             "grid": "Task grid",
             "list": "Task list",
             "detailed": "Task detailed"
@@ -514,6 +532,7 @@
 
         "invoice": {
             "main": "Invoicing",
+            "header_1": "Options",
             "template": "Invoice template",
             "grid": "Invoice grid",
             "archive": "Invoice archive"
@@ -521,6 +540,9 @@
 
         "user": {
             "main": "User pages",
+            "header_user": "User",
+            "header_1": "Basic",
+            "header_2": "Profiles",
             "cards": "User cards",
             "list": "User list",
             "profile": "Simple profile",
@@ -528,7 +550,10 @@
         },
 
         "login": {
-            "main": "Login &amp; registration",
+            "main": "Login & registration",
+            "header_1": "Basic",
+            "header_2": "Service",
+            "header_3": "Other",
             "simple": "Simple login",
             "advanced": "More login info",
             "reg": "Simple registration",
@@ -552,6 +577,9 @@
 
         "support": {
             "main": "Support",
+            "header_tools": "Tools",
+            "header_1": "Chats",
+            "header_2": "Knowledgebase",
             "chat_layouts": "Conversation layouts",
             "chat_options": "Conversation options",
             "base": "Knowledgebase",
@@ -560,6 +588,9 @@
 
         "search": {
             "main": "Search",
+            "header_kits": "Kits",
+            "header_1": "Basic",
+            "header_2": "Media",
             "basic": "Basic search results",
             "user": "User search results",
             "image": "Image search results",
@@ -568,6 +599,7 @@
 
         "gallery": {
             "main": "Gallery",
+            "header_1": "Options",
             "grid": "Media grid",
             "title": "Media with titles",
             "desc": "Media with description",
@@ -576,6 +608,7 @@
 
         "error": {
             "main": "Error pages",
+            "header_1": "Options",
             "403": "Error 403",
             "404": "Error 404",
             "405": "Error 405",
